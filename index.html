@@ -10,8 +10,44 @@
         After careful consideration and a generous grant from NASA, our team has determined that a woodchuck could chuck five wood, with a standard deviation of +/- .37 wood.
       </p>
       <footer>posted by Chuck Wooden</footer>
+      <!-- form, js gets values based on ids here -->
+      <!-- commenterName, commentText -->
+      <form onsubmit="postComment();return false;">
+        Name: <input type="text" id="commenterName"><br>
+        Comment: <input type="textarea" id="commentText"><br>
+        <input type="submit">
+      </form>
+      <div id="comments">
+        
+      </div>
     </article>
     <script src="lodash.min.js"></script>
     <script src="index.js"></script>
+    <!-- this is where we'll put the Lodash HTML template -->
+    <script id="comment-template" type="text/x-lodash-template">
+      <div class="comment">
+        <div class="commenter">
+          <p>
+            Date posted: <%= commentDate %>
+           </p>
+          <p>
+            Posted By:
+            <% if(commenter !== '') { %>
+              <%= commenter %>
+              <% } else { %>
+                Anonymous
+            <% } %>
+          </p>
+        </div>
+        <div class="comment-body">
+          <h1><label>Post: </label>
+            <% if (comment === "fuck"){ %>
+              <%= comment = "no profanity please" %>
+              <% } else { %>
+            <%= comment %>
+          <% } %></h1>
+        </div>   
+      </div>
+    </script>
   </body>
 </html>
