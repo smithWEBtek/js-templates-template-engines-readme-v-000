@@ -69,7 +69,7 @@ We know the format of the template we want, but instead of adding it using strin
 
 **Top-tip:** By default, we access lodash functions through the underscore, which is a variable that holds the root object, like `_.template()`. This is similar to accessing jQuery functions via the `$` variable. This is because lodash was originally a fork of the [Underscore.js library](http://underscorejs.org/).
 
-We'll start by building a template string as we have in the past, but instead of concatenation, we'll be using *interpolation*, which is a way to replace text in strings using special delimeters.
+We'll start by building a template string as we have in the past, but instead of concatenation, we'll be using *interpolation*, which is a way to replace text in strings using special delimiters.
 
 In lodash, we can interpolate strings with the `<%= %>` delimiter, so let's try it out.
 
